@@ -113,3 +113,5 @@ The **[GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/
 ## License
 
 This project is licensed under the terms of the MIT open source license. Please refer to the [LICENSE](./LICENSE) file for the full terms.
+
+> ✨ From your first terminal prompt to your next AI-powered breakthrough, this is where your Copilot CLI journey begins.
