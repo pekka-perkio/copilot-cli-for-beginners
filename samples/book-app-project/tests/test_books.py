@@ -51,3 +51,24 @@ def test_remove_book_invalid():
     collection = BookCollection()
     result = collection.remove_book("Nonexistent Book")
     assert result is False
+
+
+def test_find_by_year_range_inclusive():
+    collection = BookCollection()
+    collection.add_book("Foundation", "Isaac Asimov", 1951)
+    collection.add_book("Dune", "Frank Herbert", 1965)
+    collection.add_book("Neuromancer", "William Gibson", 1984)
+
+    books_in_range = collection.find_by_year_range(1951, 1965)
+
+    assert [book.title for book in books_in_range] == ["Foundation", "Dune"]
+
+
+def test_find_by_year_range_no_matches():
+    collection = BookCollection()
+    collection.add_book("Foundation", "Isaac Asimov", 1951)
+    collection.add_book("Dune", "Frank Herbert", 1965)
+
+    books_in_range = collection.find_by_year_range(1990, 2000)
+
+    assert books_in_range == []
